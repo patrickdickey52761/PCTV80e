@@ -1,0 +1,9 @@
+This is an updated version of Devin Heitmueller's patch for LinuxTV, which allows you to use the Pinnacle PCTV-80e USB Tuner.
+You can find his posting about the tuner at http://www.kernellabs.com/blog/?p=1435 and his code at http://www.kernellabs.com/hg/~dheitmueller/v4l-dvb-80e
+(use the last two commits-- the second one first, then the topmost (tip/master) second).
+
+Essentially what you'll want to do is use git to download and build the media_build.git repository from linuxtv.org, and then patch it
+with the files from my repository (the em28xx.* files and the drxj directory in the linux/drivers/media/frontends directory).
+
+You can simply copy the drxj directory over to the appropriate location in your media_build directory, and then patch the em28xx files (copy/paste or diff
+and patch -p1 ), then make and make install.  The files should compile on Debian/Ubuntu 11.04 and possibly 11.10.
