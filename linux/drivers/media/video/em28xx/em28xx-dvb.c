@@ -640,6 +640,7 @@ static int em28xx_dvb_init(struct em28xx *dev)
 {
 	int result = 0, mfe_shared = 0;
 	struct em28xx_dvb *dvb;
+	struct dvb_frontend *fe;
 
 	if (!dev->board.has_dvb) {
 		/* This device does not support the extension */
