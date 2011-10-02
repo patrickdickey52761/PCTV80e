@@ -6,7 +6,4 @@ Essentially what you'll want to do is use git to download and build the media_bu
 with the files from my repository (the em28xx.* files and the drxj directory in the linux/drivers/media/frontends directory).
 
 You can simply copy the drxj directory over to the appropriate location in your media_build directory, and then patch the em28xx files (copy/paste or diff
-and patch -p1 ), then make and make install.  The files should compile on Debian/Ubuntu 11.04, but you will probably need to make changes to compile on 11.10 or later kernels.
-
-The only files/folders that are included here are the ones that are specific to the pctv80e tuner. So you will definitely need to build this against
-the media_build git repository at http://linuxtv.org.
+and patch -p1 ), then make and make install.  The files should compile on Debian/Ubuntu 11.04 and possibly 11.10.
