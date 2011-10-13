@@ -11,6 +11,7 @@ au8522-objs = au8522_dig.o au8522_decoder.o
 drxd-objs = drxd_firm.o drxd_hard.o
 cxd2820r-objs = cxd2820r_core.o cxd2820r_c.o cxd2820r_t.o cxd2820r_t2.o
 drxk-objs := drxk_hard.o
+drx39xyj-objs := drx39xxj.o drx_driver.o drx39xxj_dummy.o drxj.o drx_dap_fasi.o
 
 obj-$(CONFIG_DVB_PLL) += dvb-pll.o
 obj-$(CONFIG_DVB_STV0299) += stv0299.o
@@ -86,7 +87,7 @@ obj-$(CONFIG_DVB_ISL6423) += isl6423.o
 obj-$(CONFIG_DVB_EC100) += ec100.o
 obj-$(CONFIG_DVB_DS3000) += ds3000.o
 obj-$(CONFIG_DVB_MB86A16) += mb86a16.o
-obj-$(CONFIG_DVB_DRX39XYJ) += drx39xyj/
+obj-$(CONFIG_DVB_DRX39XYJ) += drx39xyj.o
 obj-$(CONFIG_DVB_MB86A20S) += mb86a20s.o
 obj-$(CONFIG_DVB_IX2505V) += ix2505v.o
 obj-$(CONFIG_DVB_STV0367) += stv0367.o
