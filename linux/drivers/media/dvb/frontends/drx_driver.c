@@ -233,7 +233,8 @@ ScanWaitForLock(pDRXDemodInstance_t demod,
 	while (doneWaiting == FALSE)
 	{
 
-		if (DRX_Ctrl(demod, DRX_CTRL_LOCK_STATUS, &lockState) != DRX_STS_OK) {
+		if (DRX_Ctrl(demod, DRX_CTRL_LOCK_STATUS, &lockState) !=
+							DRX_STS_OK) {
 			return DRX_STS_ERROR;
 		}
 		currentTime = DRXBSP_HST_Clock();

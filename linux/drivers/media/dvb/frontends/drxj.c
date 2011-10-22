@@ -1500,7 +1500,7 @@ static u32_t FracTimes1e6(u32_t N, u32_t D)
 	remainder  = remainder % D ;
 	if((remainder * 2) > D)
 		frac++;
-	
+
 
 	return (frac);
 }
@@ -14029,7 +14029,7 @@ CtrlVersion(pDRXDemodInstance_t demod,
 {
 	pDRXJData_t  extAttr       = (pDRXJData_t)  (NULL);
 	pI2CDeviceAddr_t devAddr   = (pI2CDeviceAddr_t) (NULL);
-	pDRXCommonAttr_t  commonAttr   = (pDRXCommonAttr_t)(NULL);      
+	pDRXCommonAttr_t  commonAttr   = (pDRXCommonAttr_t)(NULL);
 	u16_t ucodeMajorMinor      = 0; /* BCD Ma:Ma:Ma:Mi */
 	u16_t ucodePatch           = 0; /* BCD Pa:Pa:Pa:Pa */
 	u16_t major    = 0;
@@ -14047,7 +14047,7 @@ CtrlVersion(pDRXDemodInstance_t demod,
 
 	devAddr = demod -> myI2CDevAddr;
 	extAttr = (pDRXJData_t)demod -> myExtAttr;
-	commonAttr = (pDRXCommonAttr_t)demod->myCommonAttr;     
+	commonAttr = (pDRXCommonAttr_t)demod->myCommonAttr;
 
 	/* Microcode version ****************************************/
 
@@ -14071,12 +14071,12 @@ CtrlVersion(pDRXDemodInstance_t demod,
 		patch           +=  (10*(ucodePatch & 0xF));
 		ucodePatch      >>= 4;
 		patch           +=  (100*(ucodePatch & 0xF));
-	} else {     
+	} else {
 		/* No microcode uploaded, No Rom existed, set version to 0.0.0 */
 		patch = 0;
 		minor = 0;
 		major = 0;
-	}     
+	}
 	extAttr->vVersion[0].vMajor     =  major;
 	extAttr->vVersion[0].vMinor     =  minor;
 	extAttr->vVersion[0].vPatch     =  patch;
@@ -14129,7 +14129,7 @@ CtrlVersion(pDRXDemodInstance_t demod,
 	subtype = (u16_t)((jtag>>12)&0xFF);
 	mfx = (u16_t)(jtag>>29);
 	extAttr->vVersion[1].vMinor      = 1;
-	if (mfx == 0x03) 
+	if (mfx == 0x03)
 		extAttr->vVersion[1].vPatch      = mfx+2;
 	else
 		extAttr->vVersion[1].vPatch      = mfx+1;

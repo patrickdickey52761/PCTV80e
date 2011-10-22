@@ -52,8 +52,8 @@ extern "C" {
 /* #define MPEG_OUTPUT_CLK_DRIVE_STRENGTH    0x05  */
 /* #define OOB_CRX_DRIVE_STRENGTH            0x04  */
 /* #define OOB_DRX_DRIVE_STRENGTH            0x05  */
-/* #define DRXJ_QAM_MAX_WAITTIME             1000  */          
-/* #define DRXJ_QAM_FEC_LOCK_WAITTIME        200   */          
+/* #define DRXJ_QAM_MAX_WAITTIME             1000  */
+/* #define DRXJ_QAM_FEC_LOCK_WAITTIME        200   */
 /* #define DRXJ_QAM_DEMOD_LOCK_EXT_WAITTIME  250   */
 
 /*-------------------------------------------------------------------------

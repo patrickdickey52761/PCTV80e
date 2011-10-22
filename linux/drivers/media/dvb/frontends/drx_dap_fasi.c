@@ -536,7 +536,8 @@ static DRXStatus_t DRXDAP_FASI_WriteBlock (pI2CDeviceAddr_t  devAddr,
 		#endif
 			#if ((DRXDAPFASI_SHORT_ADDR_ALLOWED)==1)
 			buf[bufx++] = (u8_t) ((addr <<  1) & 0xFF);
-			buf[bufx++] = (u8_t) (((addr >> 16) & 0x0F) | ((addr >> 18) & 0xF0));
+			buf[bufx++] = (u8_t) (((addr >> 16) & 0x0F) |
+						((addr >> 18) & 0xF0));
 			#endif
 			#if (((DRXDAPFASI_LONG_ADDR_ALLOWED)==1) && \
 				((DRXDAPFASI_SHORT_ADDR_ALLOWED)==1))
@@ -556,8 +557,10 @@ static DRXStatus_t DRXDAP_FASI_WriteBlock (pI2CDeviceAddr_t  devAddr,
 			u16_t overheadSizeI2cAddr = 0;
 			u16_t dataBlockSize       = 0;
 
-			overheadSizeI2cAddr = (IS_I2C_10BIT (devAddr->i2cAddr) ? 2 : 1);
-			dataBlockSize = (DRXDAP_MAX_WCHUNKSIZE - overheadSizeI2cAddr) & ~1;
+			overheadSizeI2cAddr = (IS_I2C_10BIT (devAddr->i2cAddr)
+						 ? 2 : 1);
+			dataBlockSize = (DRXDAP_MAX_WCHUNKSIZE -
+					overheadSizeI2cAddr) & ~1;
 
 			/* write device address */
 			st = DRXBSP_I2C_WriteRead(devAddr,
@@ -572,7 +575,8 @@ static DRXStatus_t DRXDAP_FASI_WriteBlock (pI2CDeviceAddr_t  devAddr,
 				firstErr = st;
 			}
 			bufx = 0;
-			todo = (dataBlockSize < datasize ? dataBlockSize : datasize);
+			todo = (dataBlockSize < datasize ? dataBlockSize :
+								datasize);
 		}
 		DRXBSP_HST_Memcpy (&buf[bufx], data, todo);
 		/* write (address if can do and) data */
@@ -625,7 +629,8 @@ static DRXStatus_t DRXDAP_FASI_WriteReg16 (pI2CDeviceAddr_t  devAddr,
 	buf[0] = (u8_t) ((data >> 0) & 0xFF);
 	buf[1] = (u8_t) ((data >> 8) & 0xFF);
 
-	return DRXDAP_FASI_WriteBlock (devAddr, addr, sizeof (data), buf, flags);
+	return DRXDAP_FASI_WriteBlock (devAddr, addr, sizeof (data), buf,
+								flags);
 }
 
 
@@ -660,5 +665,6 @@ static DRXStatus_t DRXDAP_FASI_WriteReg32 (pI2CDeviceAddr_t  devAddr,
 	buf[2] = (u8_t) ((data >> 16) & 0xFF);
 	buf[3] = (u8_t) ((data >> 24) & 0xFF);
 
-	return DRXDAP_FASI_WriteBlock (devAddr, addr, sizeof (data), buf, flags);
+	return DRXDAP_FASI_WriteBlock (devAddr, addr, sizeof (data), buf,
+								flags);
 }

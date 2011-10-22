@@ -178,12 +178,14 @@ static int drx39xxj_read_ucblocks(struct dvb_frontend* fe, u32* ucblocks)
 	return 0;
 }
 
-static int drx39xxj_get_frontend(struct dvb_frontend* fe, struct dvb_frontend_parameters *p)
+static int drx39xxj_get_frontend(struct dvb_frontend* fe,
+				struct dvb_frontend_parameters *p)
 {
 	return 0;
 }
 
-static int drx39xxj_set_frontend(struct dvb_frontend* fe, struct dvb_frontend_parameters *p)
+static int drx39xxj_set_frontend(struct dvb_frontend* fe,
+				struct dvb_frontend_parameters *p)
 {
 #ifdef DJH_DEBUG
 	int i;
@@ -196,21 +198,21 @@ static int drx39xxj_set_frontend(struct dvb_frontend* fe, struct dvb_frontend_pa
 	DRXStatus_t result;
 	DRXUIOData_t uioData;
 	DRXChannel_t defChannel = {/* frequency      */ 0,
-				 /* bandwidth      */ DRX_BANDWIDTH_6MHZ,
-				 /* mirror         */ DRX_MIRROR_NO,
-				 /* constellation  */ DRX_CONSTELLATION_AUTO,
-				 /* hierarchy      */ DRX_HIERARCHY_UNKNOWN,
-				 /* priority       */ DRX_PRIORITY_UNKNOWN,
-				 /* coderate       */ DRX_CODERATE_UNKNOWN,
-				 /* guard          */ DRX_GUARD_UNKNOWN,
-				 /* fftmode        */ DRX_FFTMODE_UNKNOWN,
-				 /* classification */ DRX_CLASSIFICATION_AUTO,
-				 /* symbolrate     */ 5057000,
-				 /* interleavemode */ DRX_INTERLEAVEMODE_UNKNOWN,
-				 /* ldpc           */ DRX_LDPC_UNKNOWN,
-				 /* carrier        */ DRX_CARRIER_UNKNOWN,
-				 /* frame mode     */ DRX_FRAMEMODE_UNKNOWN
-				 };
+			 /* bandwidth      */ DRX_BANDWIDTH_6MHZ,
+			 /* mirror         */ DRX_MIRROR_NO,
+			 /* constellation  */ DRX_CONSTELLATION_AUTO,
+			 /* hierarchy      */ DRX_HIERARCHY_UNKNOWN,
+			 /* priority       */ DRX_PRIORITY_UNKNOWN,
+			 /* coderate       */ DRX_CODERATE_UNKNOWN,
+			 /* guard          */ DRX_GUARD_UNKNOWN,
+			 /* fftmode        */ DRX_FFTMODE_UNKNOWN,
+			 /* classification */ DRX_CLASSIFICATION_AUTO,
+			 /* symbolrate     */ 5057000,
+			 /* interleavemode */ DRX_INTERLEAVEMODE_UNKNOWN,
+			 /* ldpc           */ DRX_LDPC_UNKNOWN,
+			 /* carrier        */ DRX_CARRIER_UNKNOWN,
+			 /* frame mode     */ DRX_FRAMEMODE_UNKNOWN
+			 };
 
 	/* Bring the demod out of sleep */
 	drx39xxj_set_powerstate(fe, 1);
