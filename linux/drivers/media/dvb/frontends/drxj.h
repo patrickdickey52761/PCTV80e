@@ -41,17 +41,17 @@
 /*-------------------------------------------------------------------------
 INCLUDES
 -------------------------------------------------------------------------*/ 
-    
+
 #include "drx_driver.h"
 #include "drx_dap_fasi.h"
-    
+
 #ifdef __cplusplus
 extern "C" {
-	
-#endif				/* 
+
+#endif				/*
  */
-	
-/* Check DRX-J specific dap condition */ 
+
+/* Check DRX-J specific dap condition */
 /* Multi master mode and short addr format only will not work.
    RMW, CRC reset, broadcast and switching back to single master mode
    cannot be done with short addr only in multi master mode. */ 
@@ -936,7 +936,7 @@ DEFINES
 #define DRXJ_STR_OOB_LOCKSTATUS(x) (\
 				      (x ==  DRX_NEVER_LOCK) ? "Never" : \
 (x ==      DRX_NOT_LOCKED)     ? "No" : \
-(x ==  DRX_LOCKED) ? "Locked			      : \
+(x ==  DRX_LOCKED) ? "Locked"			      : \
 (x ==		   DRX_LOCK_STATE_1)			      "AGC lock" : \
 (x == DRX_LOCK_STATE_2)				      ? "sync lock" : \
 "(Invalid)")
