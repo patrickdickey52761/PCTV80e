@@ -4048,7 +4048,7 @@ CtrlSetCfgSmartAnt (pDRXDemodInstance_t   demod, pDRXJCfgSmartAnt_t smartAnt)
 		WR16(devAddr, SIO_SA_TX_DATA2__A, 0x2492
 			| ((smartAnt->ctrlData & 0x0100) >> 8)
 			| ((smartAnt->ctrlData & 0x0200) >> 6)
-			((smartAnt->ctrlData & 0x0400) >> 4)
+			| ((smartAnt->ctrlData & 0x0400) >> 4)
 			| ((smartAnt->ctrlData & 0x0800) >> 2)
 			| ((smartAnt->ctrlData & 0x1000))
 			| ((smartAnt->ctrlData & 0x2000) << 2)
@@ -13436,7 +13436,7 @@ mer2indicator (
 			indicator = 25;
 	} else {
 		indicator = 100;
-	
+	}
 	return indicator;
 }
 /**

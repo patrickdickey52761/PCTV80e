@@ -522,7 +522,7 @@ static DRXStatus_t DRXDAP_FASI_WriteBlock (pI2CDeviceAddr_t  devAddr,
 		#if (((DRXDAPFASI_LONG_ADDR_ALLOWED)==1) && \
 			((DRXDAPFASI_SHORT_ADDR_ALLOWED)==1))
 			/* short format address preferred but long format otherwise */
-			if (DRXDAP_FASI_LONG_FORMAT(addr) {
+			if (DRXDAP_FASI_LONG_FORMAT(addr)) {
 		#endif
 		#if ((DRXDAPFASI_LONG_ADDR_ALLOWED)==1)
 			buf[bufx++] = (u8_t) (((addr <<  1) & 0xFF)|0x01);

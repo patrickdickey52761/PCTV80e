@@ -705,4 +705,3 @@ config DVB_DUMMY_FE
 	tristate "Dummy frontend driver"
 	default n
 endmenu
-
