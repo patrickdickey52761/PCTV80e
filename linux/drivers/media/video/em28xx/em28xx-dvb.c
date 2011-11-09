@@ -313,9 +313,9 @@ static struct drxd_config em28xx_drxd = {
 
 static struct tda18271_std_map drx_j_std_map = {
 	.atsc_6   = { .if_freq = 5000, .agc_mode = 3, .std = 0, .if_lvl = 1,
-		      .rfagc_top = 0x37, },
+			.rfagc_top = 0x37, },
 	.qam_6    = { .if_freq = 5380, .agc_mode = 3, .std = 3, .if_lvl = 1,
-		      .rfagc_top = 0x37, },
+			.rfagc_top = 0x37, },
 };
 
 static struct tda18271_config pinnacle_80e_dvb_config = {
